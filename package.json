@@ -1,0 +1,20 @@
+{
+  "name": "generate-data-service",
+  "version": "1.0.0",
+  "description": "ERAD Data Generator Service - Standalone SSR Web for Database Seed & Truncate",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
