@@ -1,0 +1,13 @@
+services:
+  generate-data:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: generate-data
+    restart: unless-stopped
+    ports:
+      - "3099:3099"
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

@@ -63,34 +63,21 @@ Service ini mereplikasi fungsionalitas dari script `error-service/prisma/seed.js
 
 ---
 
-## 🐳 Menjalankan di Docker Container
+## 🐳 Menjalankan dengan Docker Compose
 
-### 1. Build Image Docker
+Cukup gunakan perintah satu baris berikut:
+
 ```bash
 cd generate_data
-docker build -t erad-generate-data .
+docker compose up -d --build
 ```
 
-### 2. Jalankan Container
+Container otomatis berjalan di background dan membaca konfigurasi dari file `.env`.
 
-#### Opsi A: Database Berada di Mesin Host (Lokal Anda)
-```bash
-docker run -d \
-  --name erad-generate-data \
-  -p 3099:3099 \
-  -e DATABASE_URL="postgresql://postgres:123@host.docker.internal:5432/monitor_err" \
-  erad-generate-data
-```
-
-#### Opsi B: Database Berada di Jaringan Docker yang Sama
-```bash
-docker run -d \
-  --name erad-generate-data \
-  --network my-docker-network \
-  -p 3099:3099 \
-  -e DATABASE_URL="postgresql://postgres:123@postgres-container:5432/monitor_err" \
-  erad-generate-data
-```
+### Perintah Manajemen:
+* **Lihat log server:** `docker compose logs -f`
+* **Stop container:** `docker compose down`
+* **Restart container:** `docker compose restart`
 
 ---
 
